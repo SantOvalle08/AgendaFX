@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="542.0" prefWidth="772.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.uniquindio.pr2.agenda.controllers.MainSceneController">
+   <children>
+      <SplitPane dividerPositions="0.29797979797979796" layoutX="6.0" layoutY="30.0" prefHeight="510.0" prefWidth="766.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <Label layoutX="14.0" layoutY="14.0" text="Datos de Contacto" />
+                  <Separator layoutY="39.0" prefHeight="3.0" prefWidth="225.0" />
+                  <Label layoutX="14.0" layoutY="50.0" text="Nombre:" />
+                  <TextField fx:id="txtNombre" layoutX="14.0" layoutY="74.0" prefHeight="25.0" prefWidth="202.0" />
+                  <TextField fx:id="txtAlias" layoutX="12.0" layoutY="142.0" prefHeight="25.0" prefWidth="202.0" />
+                  <Label layoutX="12.0" layoutY="118.0" text="Alias:" />
+                  <TextField fx:id="txtDireccion" layoutX="12.0" layoutY="208.0" prefHeight="25.0" prefWidth="202.0" />
+                  <Label layoutX="12.0" layoutY="184.0" text="Direccion:" />
+                  <TextField fx:id="txtTelefono" layoutX="14.0" layoutY="273.0" prefHeight="25.0" prefWidth="202.0" />
+                  <Label layoutX="14.0" layoutY="249.0" text="Telefono:" />
+                  <TextField fx:id="txtEmail" layoutX="12.0" layoutY="338.0" prefHeight="25.0" prefWidth="202.0" />
+                  <Label layoutX="12.0" layoutY="314.0" text="E-mail:" />
+                  <Button fx:id="btnHuecos" layoutX="39.0" layoutY="461.0" mnemonicParsing="false" onAction="#consultarHuecos" text="Consultar Huecos Libres" />
+                  <Button fx:id="btnBuscar" layoutX="60.0" layoutY="423.0" mnemonicParsing="false" onAction="#buscarContacto" text="Buscar Contacto" />
+                  <Button fx:id="btnAniadir" layoutX="60.0" layoutY="387.0" mnemonicParsing="false" onAction="#aniadirContacto" text="Añadir Contacto" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="158.0" prefWidth="373.0">
+               <children>
+                  <ScrollPane layoutX="7.0" layoutY="14.0" prefHeight="358.0" prefWidth="516.0">
+                     <content>
+                        <TableView fx:id="tableViewAgenda" prefHeight="351.0" prefWidth="515.0">
+                           <columns>
+                              <TableColumn fx:id="columnNombre" prefWidth="75.0" text="Nombre" />
+                              <TableColumn fx:id="columnAlias" prefWidth="75.0" text="Alias" />
+                              <TableColumn fx:id="columnDireccion" prefWidth="75.0" text="Direccion" />
+                              <TableColumn fx:id="columnTelefono" prefWidth="116.0" text="Telefono" />
+                              <TableColumn fx:id="columnEmail" prefWidth="85.0" text="Email" />
+                              <TableColumn fx:id="columnCategoria" prefWidth="88.0" text="Categoria" />
+                           </columns>
+                        </TableView>
+                     </content>
+                  </ScrollPane>
+                  <Button fx:id="btnEliminar" layoutX="23.0" layoutY="461.0" mnemonicParsing="false" onAction="#eliminarContacto" text="Eliminar Contacto" />
+                  <Button fx:id="btnAgendaLlena" layoutX="425.0" layoutY="461.0" mnemonicParsing="false" onAction="#verificarAgenda" text="Agenda Llena?" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+      <Label layoutX="335.0" layoutY="6.0" text="Agenda con JavaFX" />
+   </children>
+</AnchorPane>
